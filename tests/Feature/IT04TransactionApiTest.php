@@ -6,21 +6,10 @@ use App\Models\Pembelian;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
-/**
- * IT-04: Transaksi (API) → Riwayat Transaksi
- * API Integration Test (PHPUnit API)
- * 
- * Tujuan: Memastikan transaksi via API berhasil dan tercatat di database
- * 
- * Langkah: Kirim request API transaksi → response sukses → cek record DB
- */
 class IT04TransactionApiTest extends TestCase
 {
     use RefreshDatabase;
 
-    /**
-     * Test: Create game transaction (Mobile Legends)
-     */
     public function test_can_create_game_transaction(): void
     {
         // Transaction data - Mobile Legends Diamond
@@ -70,9 +59,6 @@ class IT04TransactionApiTest extends TestCase
         ]);
     }
 
-    /**
-     * Test: Create subscription transaction (Netflix)
-     */
     public function test_can_create_netflix_subscription(): void
     {
         // Transaction data - Netflix Premium
