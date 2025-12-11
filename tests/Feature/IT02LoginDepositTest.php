@@ -11,10 +11,10 @@ use Tests\TestCase;
 /**
  * IT-02: Login → Deposit (User)
  * Feature Test (Auth + Session + DB)
- * 
- * Tujuan: Memastikan hanya user login bisa melakukan deposit 
+ *
+ * Tujuan: Memastikan hanya user login bisa melakukan deposit
  * dan user ID diteruskan ke modul deposit
- * 
+ *
  * Langkah: Login → buka halaman deposit → input nominal & metode → submit
  */
 class IT02LoginDepositTest extends TestCase

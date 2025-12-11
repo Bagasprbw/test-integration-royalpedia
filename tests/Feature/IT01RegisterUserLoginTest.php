@@ -4,16 +4,17 @@ namespace Tests\Feature;
 
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Tests\TestCase;
 
 /**
  * IT-01: Register User → Login
  * Feature Test (Web Route + DB + Session)
- * 
- * Tujuan: Memastikan user yang selesai registrasi bisa login 
+ *
+ * Tujuan: Memastikan user yang selesai registrasi bisa login
  * menggunakan kredensial yang sama
- * 
+ *
  * Langkah: Register user → data tersimpan di DB → login → redirect ke landing page
  */
 class IT01RegisterUserLoginTest extends TestCase
@@ -104,7 +105,7 @@ class IT01RegisterUserLoginTest extends TestCase
         $this->assertAuthenticated();
 
         // Assert: User yang login adalah user yang benar
-        $this->assertEquals('testuserlogin', auth()->user()->username);
+        $this->assertEquals('testuserlogin', Auth::user()->username);
     }
 
     /**
