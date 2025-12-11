@@ -9,9 +9,29 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
+    use HasFactory, Notifiable;
+
     protected $fillable = [
-        'name', 'username', 'email', 'password', 'role', 'balance', 'whatsapp'
+        'name',
+        'username',
+        'email',
+        'password',
+        'role',
+        'balance',
+        'whatsapp'
     ];
+
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
+
+    protected function casts(): array
+    {
+        return [
+            'password' => 'hashed',
+        ];
+    }
 
     public function deposits()
     {
